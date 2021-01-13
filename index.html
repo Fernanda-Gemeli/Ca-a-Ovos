@@ -1,0 +1,329 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>CAÇA AOS OVOS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="font/material-icons.css"> 
+  <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+</head>
+<body> 
+  <section class="inicio">
+    <div><button class= "material-icon som">volume_off</button>
+    <a href="ajuda.html" class="material-icon ajuda">help</a></div>
+    <h1>CAÇA AOS OVOS</h1>
+    <p><img class="ovo" src="img/Ovo.png"></p>
+    <p><button class="btn-inicio">JOGAR</button></p>
+    <h2>Pegue 3 ovos em 10 segundos! Boa sorte!</h2>
+  </section>
+
+  <section class="jogo">
+    <header>
+      <h2 class="ovos">OVOS: <span>0</span></h2>
+      <h2 class="tempo"><span>0</span>s</h2>
+    </header>
+
+    <div class="campo">
+      <div class="ovo1" id="ovo1"><span></span></div>
+      <div class="ovo2" id="ovo2"><span></span></div>
+      <div class="ovo3" id="ovo3"><span></span></div>
+      <div class="ovo4" id="ovo4"><span></span></div>
+      <div class="ovo5" id="ovo5"><span></span></div>
+      <div class="ovo6" id="ovo6"><span></span></div>
+      <div class="ovo7" id="ovo7"><span></span></div>
+      <div class="ovo8" id="ovo8"><span></span></div>
+      <div class="ovo9" id="ovo9"><span></span></div>
+      <div class="ovo10" id="ovo10"><span></span></div>
+    </div>
+  </section>
+
+  <section class="ganhou">
+    <h1>Você venceu! Parabéns!</h1>
+    <h2>Sua pontuação foi: </h2> <h2 id="resultado"></h2>
+    <p><button class="novamente">JOGAR NOVAMENTE</button></p>
+  </section>
+
+  <section class="perdeu">
+    <h1>Não foi dessa vez! Tente novamente!</h1>
+    <h2>Sua pontuação foi: </h2> <h2 id="resultado1"></h2>
+    <p><button class="novamente">JOGAR NOVAMENTE</button></p>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    var resulOvos = 0
+    var resulTempo = 0;
+
+    function load(){
+      musicaTemaClassico = new Audio("musica/Summer.mp3");
+      setInterval(function(){
+        $("section.inicio img.ovo").animate({top:"-15px"},1500).animate({top:"0px"},1500);
+      },3000);
+    }
+    load();
+
+    $("section.inicio button.som").on("click", function(){
+      textoDoBotao = $(this).text();
+      if(textoDoBotao == "volume_off"){
+        musicaTemaClassico.play();
+        $(this).text("volume_up");
+      }else{
+        musicaTemaClassico.pause();
+        $(this).text("volume_off");
+      }
+    });
+
+    $("section.inicio button.btn-inicio").on("click", function(){
+      $("section").hide();
+      $("section.jogo").show();
+
+      musicaTemaJogo = new Audio("musica/Summer.mp3");
+      musicaTemaJogo.play();
+
+      contagemDeTempo = setInterval(function(){
+        var conteudoTempo = parseInt($("h2.tempo span").text());
+        var soma = conteudoTempo + 1;
+        resulTempo = soma;
+        $("h2.tempo span").text(soma);
+      },1000);
+
+      larguraDoCampo = $("div.campo").width();
+      alturaDoCampo = $("div.campo").height();
+
+      larguraDoOvo1 = $("div.ovo1").width();
+      alturaDoOvo1 = $("div.ovo1").height();
+
+      deslocamento1 = setInterval(function(){
+        distanciaDoTopo1 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo1));
+        distanciaDaEsquerda1 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo1));
+        $("section.jogo div.ovo1").animate({top:distanciaDoTopo1+"px", left:distanciaDaEsquerda1+"px"},3000);
+      },3000);
+
+      larguraDoOvo2 = $("div.ovo2").width();
+      alturaDoOvo2 = $("div.ovo2").height();
+
+      deslocamento2 = setInterval(function(){
+        distanciaDoTopo2 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo2));
+        distanciaDaEsquerda2 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo2));
+        $("section.jogo div.ovo2").animate({top:distanciaDoTopo2+"px", left:distanciaDaEsquerda2+"px"},3000);
+      },3000);
+
+      larguraDoOvo3 = $("div.ovo3").width();
+      alturaDoOvo3 = $("div.ovo3").height();
+
+      deslocamento3 = setInterval(function(){
+        distanciaDoTopo3 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo3));
+        distanciaDaEsquerda3 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo3));
+        $("section.jogo div.ovo3").animate({top:distanciaDoTopo3+"px", left:distanciaDaEsquerda3+"px"},3000);
+      },3000);
+
+      larguraDoOvo4 = $("div.ovo4").width();
+      alturaDoOvo4 = $("div.ovo4").height();
+
+      deslocamento4 = setInterval(function(){
+        distanciaDoTopo4 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo4));
+        distanciaDaEsquerda4 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo4));
+        $("section.jogo div.ovo4").animate({top:distanciaDoTopo4+"px", left:distanciaDaEsquerda4+"px"},3000);
+      },3000);
+
+      larguraDoOvo5 = $("div.ovo5").width();
+      alturaDoOvo5 = $("div.ovo5").height();
+
+      deslocamento5 = setInterval(function(){
+        distanciaDoTopo5 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo5));
+        distanciaDaEsquerda5 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo5));
+        $("section.jogo div.ovo5").animate({top:distanciaDoTopo5+"px", left:distanciaDaEsquerda5+"px"},3000);
+      },3000);
+
+      larguraDoOvo6 = $("div.ovo6").width();
+      alturaDoOvo6 = $("div.ovo6").height();
+
+      deslocamento6 = setInterval(function(){
+        distanciaDoTopo6 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo6));
+        distanciaDaEsquerda6 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo6));
+        $("section.jogo div.ovo6").animate({top:distanciaDoTopo6+"px", left:distanciaDaEsquerda6+"px"},3000);
+      },3000);
+
+      larguraDoOvo7 = $("div.ovo7").width();
+      alturaDoOvo7 = $("div.ovo7").height();
+
+      deslocamento7 = setInterval(function(){
+        distanciaDoTopo7 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo7));
+        distanciaDaEsquerda7 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo7));
+        $("section.jogo div.ovo7").animate({top:distanciaDoTopo7+"px", left:distanciaDaEsquerda7+"px"},3000);
+      },3000);
+
+      larguraDoOvo8 = $("div.ovo8").width();
+      alturaDoOvo8 = $("div.ovo8").height();
+
+      deslocamento8 = setInterval(function(){
+        distanciaDoTopo8 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo8));
+        distanciaDaEsquerda8 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo8));
+        console.log(alturaDoCampo, alturaDoOvo8, larguraDoCampo, larguraDoOvo8, distanciaDoTopo8, distanciaDaEsquerda8);
+        $("section.jogo div.ovo8").animate({top:distanciaDoTopo8+"px", left:distanciaDaEsquerda8+"px"},3000);
+      },3000);
+
+      larguraDoOvo9 = $("div.ovo9").width();
+      alturaDoOvo9 = $("div.ovo9").height();
+
+      deslocamento9 = setInterval(function(){
+        distanciaDoTopo9 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo9));
+        distanciaDaEsquerda9 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo9));
+        $("section.jogo div.ovo9").animate({top:distanciaDoTopo9+"px", left:distanciaDaEsquerda9+"px"},3000);
+      },3000);
+
+      larguraDoOvo10 = $("div.ovo10").width();
+      alturaDoOvo10 = $("div.ovo10").height();
+
+      deslocamento10 = setInterval(function(){
+        distanciaDoTopo10 = Math.round(Math.random()*(alturaDoCampo-alturaDoOvo10));
+        distanciaDaEsquerda10 = Math.round(Math.random()*(larguraDoCampo-larguraDoOvo10));
+        $("section.jogo div.ovo10").animate({top:distanciaDoTopo10+"px", left:distanciaDaEsquerda10+"px"},3000);
+      },3000);
+    });
+
+    $("section.jogo div.ovo1 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo2 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo3 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo4 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo5 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo6 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo7 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo8 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo9 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    $("section.jogo div.ovo10 span").on("click", function(){
+      var conteudoOvos = parseInt($("h2.ovos span").text());
+      var soma = conteudoOvos + 1;
+      resulOvos = soma;
+      $("h2.ovos span").text(soma);
+      document.getElementById("resultado").innerHTML = resulOvos;
+      document.getElementById("resultado1").innerHTML = resulOvos;
+    });
+
+    vitoria = setInterval(function(){
+      if (resulOvos >= 3 && resulTempo < 10){
+        $("section.jogo").hide();
+        $("section.ganhou").show();
+
+        musicaTemaJogo.pause();
+        musicaGanhou = new Audio('musica/aplausos.mp3');
+        musicaGanhou.play();
+
+        clearInterval(vitoria);
+        clearInterval(derrota);
+
+        $("section.ganhou button.novamente").on("click", function() {
+          location.reload();
+        });
+      }
+    }, 500);
+
+    derrota = setInterval(function(){
+      if (resulTempo >= 10 && resulOvos < 3) {
+        $("section.jogo").hide();
+        $("section.perdeu").show();
+
+        musicaTemaJogo.pause();
+        musicaPerdeu = new Audio('musica/game-over-acarde.wav');
+        musicaPerdeu.play();
+
+        clearInterval(derrota);
+        clearInterval(vitoria);
+      
+        $("section.perdeu button.novamente").on("click", function(){
+          location.reload();
+        });
+      }
+    }, 500);
+
+    clearInterval(deslocamento1);
+    clearInterval(deslocamento2);
+    clearInterval(deslocamento3);
+    clearInterval(deslocamento4);
+    clearInterval(deslocamento5);
+    clearInterval(deslocamento6);
+    clearInterval(deslocamento7);
+    clearInterval(deslocamento8);
+    clearInterval(deslocamento9);
+    clearInterval(deslocamento10);
+  </script>
+</body>
+</html>

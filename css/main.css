@@ -1,0 +1,427 @@
+@font-face {
+     font-family: material;
+     src: url('../font/MaterialIcons-Regular.ttf');
+}
+
+body{
+     background: url(../img/Fundo.jpg);
+     background-size: 100% auto, auto;
+}
+
+.material-icon{
+     font-family: material;
+}
+
+section.inicio{
+     text-align: center;
+}
+
+section.inicio div{
+     text-align: right;
+     margin: 3vh 3vw 18vh 0;
+     color: black;
+}
+
+section.inicio div button{
+     background: none;
+     border: none;
+     color: white;
+     font-size: 3em;
+}
+
+section.inicio h1{
+     font-family: harry;
+     font-size: 4em;
+     background: linear-gradient(#f804af, #f87dd3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+section.inicio h2{
+     margin-top: 3%;
+     font-family: harry;
+     font-size: 2em;
+     background: linear-gradient(#f804af, #f87dd3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+section.inicio p{
+     margin: 2vh 0;
+}
+
+section.inicio p img{
+     height: 10vh;
+     position: relative;
+}
+
+section.inicio p button{
+     background: linear-gradient(to top, #f804af, #f87dd3);
+     border: none;
+     color: white;
+     font-size: 2em;
+     padding: 2vh 2vw;
+}
+
+section.inicio a{
+     text-decoration: none;
+     border: none;
+     color: white;
+     font-size: 3em;
+     padding: 2vh 2vw;
+}
+
+section.jogo{
+     display: none;
+     width: 90vw;
+     margin: 5vh auto 0 auto;
+}
+
+section.jogo header{
+     display: flex;
+     justify-content: space-between;
+     font-size: 2em;
+     color: #f804af;
+}
+
+section.jogo div.campo{
+     width: 90vw;
+     height: 80vh;
+     margin: 5vh 0 0 0;
+     background: url(../img/Fundo\ jogo.jpg) center center;
+     background-size: 100% auto;
+     /* display: flex; */
+     position: absolute;
+}
+
+section.jogo div.ovo1{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo2{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo3{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo4{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo5{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo6{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo7{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo8{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo9{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo10{
+     width: 43px;
+     height: 42px;
+     background: url(../img/Ovo.png);
+     background-size: 100%;
+     position: absolute;
+     top: 0;
+     left: 47%;
+}
+
+section.jogo div.ovo1 span{
+     display: block;
+     position: relative;
+     top: 40%;
+     width: 50%;
+     height: 60%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo2 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo3 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo4 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo5 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo6 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo7 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo8 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo9 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.jogo div.ovo10 span{
+     display: block;
+     position: relative;
+     top: 36%;
+     width: 30%;
+     height: 40%;
+     border-radius: 50%;
+     margin: 0 auto 0 auto;
+}
+
+section.ganhou{
+     display: none;
+     text-align: center;
+     margin-top: 12%;
+}
+
+section.ganhou button{
+     background: none;
+     border: none;
+     color: white;
+     font-size: 3em;
+}
+
+section.ganhou h1{
+     font-size: 4em;
+     background: linear-gradient(#f804af, #f87dd3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+section.ganhou h2{
+     margin-top: 3%;
+     font-size: 2em;
+     background: linear-gradient(#f804af, #f87dd3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+section.ganhou p{
+     margin: 2vh 0;
+
+}
+
+section.ganhou p button{
+     background: linear-gradient(to top, #f804af, #f87dd3);
+     border: none;
+     color: white;
+     font-size: 2em;
+     padding: 2vh 2vw;
+     font-family: harry;
+     margin: 5vh auto;
+}
+
+section.perdeu{
+     display: none;
+     text-align: center;
+     margin-top: 12%;
+}
+
+section.perdeu button{
+     background: none;
+     border: none;
+     color: white;
+     font-size: 3em;
+}
+
+section.perdeu h1{
+     font-family: harry;
+     font-size: 4em;
+     background: linear-gradient(#f804af, #f87dd3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+section.perdeu h2{
+     margin-top: 3%;
+     font-family: harry;
+     font-size: 2em;
+     background: linear-gradient(#f804af, #f87dd3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+
+section.perdeu p{
+     margin: 2vh 0;
+}
+
+section.perdeu p button{
+     background: linear-gradient(to top, #f804af, #f87dd3);
+     border: none;
+     color: white;
+     font-size: 2em;
+     padding: 2vh 2vw;
+     font-family: harry;
+     margin: 5vh auto;
+}
+
+section.ajuda h2{
+     margin-top: 3%;
+     font-size: 4em;
+     background: #f804af;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     text-align: center;
+}
+
+section.ajuda h3{
+     margin-top: 2%;
+     font-size: 3em;
+     background: linear-gradient(#f804af, #f87dd3);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     text-align: center;
+}
+
+section.ajuda p{
+     margin: 2vh 0;
+     font-size: 2em;
+     background: #ff2cc0;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     text-align: center;
+}
+
+section.ajuda a{
+     text-decoration: none;
+     border: none;
+     color: white;
+     font-size: 3em;
+     padding: 2vh 2vw;
+}
+
+section.ajuda div.branco{
+     width: 80vw;
+     height: 70vh;
+     margin: 3vh 0 0 20vh;
+     background: center;
+     background-color: white;
+     background-size: 100% auto;
+}
+
